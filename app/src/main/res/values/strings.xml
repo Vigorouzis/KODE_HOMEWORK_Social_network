@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">KODE_HOMEWORK_Social_network</string>
+    <string name="password">Введите пароль</string>
+    <string name="login">Введите логин</string>
+</resources>

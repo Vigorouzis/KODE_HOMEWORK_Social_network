@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <item name="android.graphics.Bitmap android.graphics.Bitmap createBitmap(android.util.DisplayMetrics, int[], int, int, android.graphics.Bitmap.Config) 1">
+    <annotation name="androidx.annotation.ColorInt"/>
+  </item>
+  <item name="android.graphics.Bitmap android.graphics.Bitmap createBitmap(android.util.DisplayMetrics, int[], int, int, int, int, android.graphics.Bitmap.Config) 1">
+    <annotation name="androidx.annotation.ColorInt"/>
+  </item>
+  <item name="android.graphics.Bitmap android.graphics.Bitmap createBitmap(int[], int, int, android.graphics.Bitmap.Config) 0">
+    <annotation name="androidx.annotation.ColorInt"/>
+  </item>
+  <item name="android.graphics.Bitmap android.graphics.Bitmap createBitmap(int[], int, int, int, int, android.graphics.Bitmap.Config) 0">
+    <annotation name="androidx.annotation.ColorInt"/>
+  </item>
+  <item name="android.graphics.Bitmap android.graphics.Bitmap extractAlpha()">
+    <annotation name="androidx.annotation.CheckResult"/>
+  </item>
+  <item name="android.graphics.Bitmap android.graphics.Bitmap extractAlpha(android.graphics.Paint, int[])">
+    <annotation name="androidx.annotation.CheckResult"/>
+  </item>
+  <item name="android.graphics.Bitmap boolean compress(android.graphics.Bitmap.CompressFormat, int, java.io.OutputStream)">
+    <annotation name="androidx.annotation.WorkerThread"/>
+  </item>
+  <item name="android.graphics.Bitmap int getPixel(int, int)">
+    <annotation name="androidx.annotation.ColorInt"/>
+  </item>
+  <item name="android.graphics.Bitmap void eraseColor(int) 0">
+    <annotation name="androidx.annotation.ColorInt"/>
+  </item>
+  <item name="android.graphics.Bitmap void getPixels(int[], int, int, int, int, int, int) 0">
+    <annotation name="androidx.annotation.ColorInt"/>
+  </item>
+  <item name="android.graphics.Bitmap void setPixel(int, int, int) 2">
+    <annotation name="androidx.annotation.ColorInt"/>
+  </item>
+  <item name="android.graphics.Bitmap void setPixels(int[], int, int, int, int, int, int) 0">
+    <annotatio
