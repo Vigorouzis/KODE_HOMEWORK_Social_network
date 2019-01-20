@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FeedActivity"></activity>
+        <activity android:name=".FeedActivity"
+            android:theme="@style/Feed">
+        </activity>
     </application>
 
 </manifest>
