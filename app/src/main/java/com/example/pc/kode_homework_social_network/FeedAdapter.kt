@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 
-class FeedAdapter(val feedList: List<Feed>): RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
+class FeedAdapter(private val feedList: List<Feed>) : RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val feeds = feedList[position]
 
@@ -31,4 +31,6 @@ class FeedAdapter(val feedList: List<Feed>): RecyclerView.Adapter<FeedAdapter.Vi
         val imageView: ImageView = itemView.findViewById(R.id.img_news)
 
     }
+
+
 }
