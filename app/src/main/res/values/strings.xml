@@ -5,4 +5,6 @@
     <string name="news">Новости</string>
     <string name="lenta">Лента</string>
     <string name="uved">Уведомления</string>
+    <string name="welcome">Welcome</string>
+    <string name="Login">Login</string>
 </resources>

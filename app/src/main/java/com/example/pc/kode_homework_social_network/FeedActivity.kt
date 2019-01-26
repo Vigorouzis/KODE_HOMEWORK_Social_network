@@ -2,89 +2,67 @@ package com.example.pc.kode_homework_social_network
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.BottomNavigationView
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.activity_feed.*
-import java.util.ArrayList
+
 
 class FeedActivity : AppCompatActivity() {
-    private val langList = ArrayList<Feed>()
     private lateinit var recyclerView: RecyclerView
-    private lateinit var viewManager: RecyclerView.LayoutManager
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
+    private lateinit var viewManager: RecyclerView.LayoutManager
+    private var feed = dataInit()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feed)
 
-        addItem()
-        val recyclerView: RecyclerView = findViewById(R.id.collapsing_toolbar_recycler_view)
-
-        //vertical RecyclerView
-        recyclerView.layoutManager = LinearLayoutManager(this)
-
-        val adapter = FeedAdapter(langList)
+        Glide.with(this).load(R.drawable.photo).apply(RequestOptions.centerCropTransform())
+            .into(findViewById(R.id.collapsing_toolbar_image_view))
 
 
-        //now adding the adapter to recyclerview
-        recyclerView.adapter = adapter
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.navigation)
 
-        navigation.setOnNavigationItemSelectedListener { item ->
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.bottom_lenta -> {
-                    updateActivity(langList)
-                                    }
+                    updateActivity(feed)
+                    collapsing_toolbar_layout.title = "Лента"
+                    Glide.with(this).load(R.drawable.photo).apply(RequestOptions.centerCropTransform())
+                        .into(findViewById(R.id.collapsing_toolbar_image_view))
+                }
+
+
                 R.id.bottom_news -> {
                     val data: List<Feed> =
-                        langList.filter { i -> i.type.findAnyOf(listOf("Новость")) != null }
+                        feed.filter { i -> i.type.findAnyOf(listOf("News")) != null }
                     updateActivity(data)
-                    collapsing_toolbar_layout.title="Новости"
-                    collapsing_toolbar_image_view.setBackgroundResource(R.drawable.photo2)
-
-
+                    collapsing_toolbar_layout.title = "Новости"
+                    Glide.with(this).load(R.drawable.photo2).apply(RequestOptions.centerCropTransform())
+                        .into(findViewById(R.id.collapsing_toolbar_image_view))
                 }
+
                 R.id.bottom_uved -> {
                     val data: List<Feed> =
-                        langList.filter { i -> i.type.findAnyOf(listOf("Уведомление")) != null }
+                        feed.filter { i -> i.type.findAnyOf(listOf("Notification")) != null }
                     updateActivity(data)
-                    collapsing_toolbar_layout.title="Уведомления"
-                    collapsing_toolbar_image_view.setBackgroundResource(R.drawable.photo3)
-
+                    collapsing_toolbar_layout.title = "Уведомления"
+                    Glide.with(this).load(R.drawable.photo3).apply(RequestOptions.centerCropTransform())
+                        .into(findViewById(R.id.collapsing_toolbar_image_view))
                 }
             }
-
-
-
-               return@setOnNavigationItemSelectedListener false
+            true
         }
 
-
-    }
-
-
-    private fun addItem() {
-
-
-        val Java = Feed(
-            "Java",
-            "Джеймс Гослинг",
-            R.drawable.photo,
-            "Новость"
-        )
-        langList.add(Java)
-
-        val Java1 = Feed(
-            "Java",
-            "Джеймс Гослинг",
-            R.drawable.photo2,
-            "Уведомление"
-        )
-        langList.add(Java1)
-
+        updateActivity(feed)
 
 
     }
 
+    //update cardViews to data array
     private fun updateActivity(data: List<Feed>) {
         viewManager = LinearLayoutManager(this)
         viewAdapter = FeedAdapter(data)
@@ -99,13 +77,47 @@ class FeedActivity : AppCompatActivity() {
 
         }
     }
+
+    private fun dataInit(): List<Feed> =
+        listOf(
+            Feed(
+                "Уведомление",
+                "Здесь находится текст",
+                R.drawable.photo,
+                "Notification"
+            ),
+            Feed(
+                "Новость",
+                "Здесь находится текст",
+                R.drawable.photo,
+                "News"
+            ),
+            Feed(
+                "Новость",
+                "Здесь находится текст",
+                R.drawable.photo,
+                "News"
+            ),
+            Feed(
+                "Новость",
+                "Здесь находится текст",
+                R.drawable.photo,
+                "News"
+            ),
+            Feed(
+                "Уведомление",
+                "Здесь находится текст",
+                R.drawable.photo,
+                "Notification"
+            ),
+            Feed(
+                "Уведомление",
+                "Здесь находится текст",
+                R.drawable.photo,
+                "Notification"
+            )
+
+        )
+
+
 }
-
-
-
-
-
-
-
-
-

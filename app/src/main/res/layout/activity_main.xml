@@ -16,7 +16,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:text="Welcome"
+        android:text="@string/welcome"
         android:textColor="#333333"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/usernameWrapper"
@@ -61,7 +61,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usernameWrapper"
-        app:layout_constraintVertical_bias="0.471">
+        app:layout_constraintVertical_bias="0.471"
+        app:passwordToggleEnabled="true">
 
         <EditText
             android:id="@+id/password"
@@ -79,7 +80,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="128dp"
-        android:text="Login"
+        android:text="@string/Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
