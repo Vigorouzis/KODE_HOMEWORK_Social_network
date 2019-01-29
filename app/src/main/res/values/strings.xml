@@ -7,4 +7,8 @@
     <string name="uved">Уведомления</string>
     <string name="welcome">Welcome</string>
     <string name="Login">Login</string>
+    <string name="Описание">Описание</string>
+    <string name="Disc_lenta">Здесь содержится описание раздела лента</string>
+    <string name="Disc_news">Здесь содержится описание раздела Новости</string>
+    <string name="Disc_uved">Здесь содержится описание раздела Уведомления</string>
 </resources>

@@ -1,13 +1,16 @@
 package com.example.pc.kode_homework_social_network
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.design.widget.BottomSheetBehavior
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.widget.LinearLayout
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.activity_feed.*
+import kotlinx.android.synthetic.main.bottom_sheet.*
 
 
 class FeedActivity : AppCompatActivity() {
@@ -20,10 +23,12 @@ class FeedActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feed)
 
+
         Glide.with(this).load(R.drawable.photo).apply(RequestOptions.centerCropTransform())
             .into(findViewById(R.id.collapsing_toolbar_image_view))
 
-
+        val bottomSheet = findViewById<LinearLayout>(R.id.bottom_sheet)
+        val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.navigation)
 
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
@@ -33,6 +38,9 @@ class FeedActivity : AppCompatActivity() {
                     collapsing_toolbar_layout.title = "Лента"
                     Glide.with(this).load(R.drawable.photo).apply(RequestOptions.centerCropTransform())
                         .into(findViewById(R.id.collapsing_toolbar_image_view))
+
+                    soderj.text = getText(R.string.Disc_uved)
+                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
                 }
 
 
@@ -43,6 +51,8 @@ class FeedActivity : AppCompatActivity() {
                     collapsing_toolbar_layout.title = "Новости"
                     Glide.with(this).load(R.drawable.photo2).apply(RequestOptions.centerCropTransform())
                         .into(findViewById(R.id.collapsing_toolbar_image_view))
+                    soderj.text = getText(R.string.Disc_news)
+                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
                 }
 
                 R.id.bottom_uved -> {
@@ -52,6 +62,9 @@ class FeedActivity : AppCompatActivity() {
                     collapsing_toolbar_layout.title = "Уведомления"
                     Glide.with(this).load(R.drawable.photo3).apply(RequestOptions.centerCropTransform())
                         .into(findViewById(R.id.collapsing_toolbar_image_view))
+
+                    soderj.text = getText(R.string.Disc_uved)
+                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
                 }
             }
             true

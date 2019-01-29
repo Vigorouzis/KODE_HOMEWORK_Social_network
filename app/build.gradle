@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply from: '../app/src/main/java/com/example/pc/kode_homework_social_network/detekt/detekt.gradle'
 
 android {
     compileSdkVersion 28

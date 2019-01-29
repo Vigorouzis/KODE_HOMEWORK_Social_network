@@ -10,6 +10,7 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
+
 class FeedAdapter(private val feedList: List<Feed>) :
     RecyclerView.Adapter<FeedAdapter.ViewHolder>() {
 
@@ -44,6 +45,7 @@ class FeedAdapter(private val feedList: List<Feed>) :
         }
         holder.nameView.text = new.name
         holder.textView.text = new.text
+
 
     }
 
